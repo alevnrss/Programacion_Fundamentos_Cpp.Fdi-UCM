@@ -50,7 +50,7 @@ int leerArchivo(string nombreArchivo, tArrayArchivo arrayNumeros){
     archivo.open(nombreArchivo);
     if(archivo.is_open()){
         archivo >> valorLeido;
-        while((valorLeido != -1) && contador < LIMITE_ARRAY ){
+        while((valorLeido != -1) && contador < LIMITE_ARRAY ){  // BUSQUEDA DE ARRAYS, (que no se haya encontrado y que no estemos en el final de la secuencia)
             arrayNumeros[contador] = valorLeido;
             contador++;
             archivo >> valorLeido;
