@@ -1,6 +1,9 @@
 /**
  * ALGORITMO 2 Y 3.
  * 
+ * IMPORTANTE EL USO DE CIN.GET() PARA QUE PUEDA LEER TAMBIEN ESPACIOS.
+ * TAMBIEN SE PUEDE DAR USO DE OPERADORES TERNARIOS Y EVITAR LAS SENTENCIAS CONDICIONALES.
+ * 
  * ALGORITMO 2.
  * Este algoritmo es para saber la longitud que tiene una cadena de caracteres utilizando char.
  * El programa finalizara siempre y cuando el usuario teclee un punto (.).
@@ -41,10 +44,10 @@ int longitud (){
     int longitud = 0;
     char c;
 
-    cin >> c;
+    c = cin.get();
     while( c!= '.'){
         longitud++;
-        cin >> c;
+        c = cin.get();
     }
 
     return longitud;
@@ -55,12 +58,12 @@ int cantidadBuscado(char buscar){
     int contador = 0;
     char c;     // aqui es donde escribiremos nuestra cadena, realmente es una forma de encontrar las veces que se repite sin usar string
     cout << "cadena : ";
-    cin >> c;
+    c = cin.get();
     while(c != '*'){
         if(c == buscar){
             contador++;
         }
-        cin >> c;
+        c = cin.get();
     }
 
     return contador;
