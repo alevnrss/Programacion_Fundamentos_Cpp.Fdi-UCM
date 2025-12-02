@@ -3,5 +3,6 @@ En este laboratorio del dia *29-10-25* se entrenara lo aprendido en *arrays, enu
 Todo esto tanto de *secuencias calculadas y secuencias explicitas como entrada por teclado*.
 Ademas se dara a entrenar lo aprendido sobre la utilizacion de la funcion *strand()* para la generacion de numeros aleatorios.
 
-Tambien es imporante el ejercicio C porque se da en practica lo aprendido sobre el <operador ternario>
+Tambien es imporante el ejercicio C porque se da en practica lo aprendido sobre el *OPERADOR TERNARIO*.
+
 
