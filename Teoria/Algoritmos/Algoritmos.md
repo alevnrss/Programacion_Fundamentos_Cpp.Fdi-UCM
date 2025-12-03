@@ -58,5 +58,57 @@ Para realizar este algoritmo se da uso de dos funciones:
         return sumaDigito;
     }
 ```
+---
+## Algoritmo 2: BUSQUEDA EN ARRAYS
+Este algoritmo se basa en la ***BUSQUEDA DE ALGUN ELEMENTO*** ubicado dentro del ***ARRAY***.
+La forma de poder encontrar este elemento, es recorriendo el array de manera que si cumple la condicion pare de `ITERAR` y poder asi mostrar todos lo elementos anteriores incluido el que se estaba buscando.
+A esto se le denomina como `ESQUEMA DE BUSQUEDA DE ELEMENTOS EN UN ARRAY`. Este esquema es fundamental cuando lo que quieres es buscar el elemento y cuando lo encuentras solamente dejas de iterar. 
+Para la demostracion de este algoritmo se dara uso del bucle `WHILE`.
+
+El bucle `WHILE` sera el inicio de nuestro esquema de busqueda, donde antes deberemos declarar una variable `INDICE` para poder recorrer todo el array sin problemas. 
+El `ESQUEMA DE BUSQUEDA EN ARRAY` se dara de la siguiente forma:
+1. Creacion de las variables `int indice = 0;` y `bool encontrado = false;`
+2. Condicion del while: `((indice < MAX) && !encontrado)`
+Esta condicion del bucle while es importante para poder recorrer el array sin ningun problema, sus condiciones son las siguientes:
+- Seguiras iterando siempre y cuando el ***INDICE*** no sea mayor al limite ***MAXIMO***, ya que si lo es indicara que hemos llegado al final de la secuencia.
+- Seguiras iterando siempre y cuando la variable ***ENCONTRADO*** sea falsa, es decir, que no se haya encontrado ese valor.
+*Estas condiciones siempre iran juntas y si una de las dos se rompe, entonces sale del while*.
+3. Condicional, normalmente se suele crear un condicional de tipo if o un operador ternario que sirve para saber que hacer si encontramos `X` valor.
+Este if lo que hara es que **SI SE CUMPLE LA CONDICION** entonces cambiaras el valor de ***ENCONTRADO*** a true y dejaras de iterar.
+Si la condicion no se cumple entonces sumas el valor del ***INDICE***.
+
+> A continuacion se mostrara un ejemplo basico donde se hara el uso del ***ESQUEMA DE BUSQUEDA DE UN ELEMENTO DE UN ARRAY*** de numeros. El objetivo de esta 
+> funcion es encontrar el numero que sea menor a 5 pero con estas condiciones.
+>   1. Siempre se mostrara los elementos junto a su posicion.
+>   2. Cuando se encuentre dicho elemento que cumpla la condicion, lo que hara sera parar de iterar y mostrar que se ha encontrado.
+>   3. Todo esto debera realizarse de manera que no siga recogiendo datos basura, solo lo necesario hasta encontrar el numero.
+
+***CODIGO C++ SOBRE EL ESQUEMA DE BUSQUEDA DE UN ELEMENTO EN UN ARRAY***
+```cpp
+    // fuera del main 
+    const int MAX = 10;
+    typedef int tArrayNumeros[MAX];
+
+    int main(){
+        tArrayNumeros a;
+        buscarDigito(a);
+        return 0;
+    }
+
+    void buscarDigito(tArrayNumeros a){  
+        int indice = 0;
+        bool encontrado = false;
+        while((indice < MAX) && !encontrado){
+            if(a[indice] < 5){
+                encontrado = true;
+                cout << "Se encontro el numreo en la posicion :" << indice << " cuyo valor es: " <<a[indice];
+            }else{
+                indice++;
+                cout << "Posicion: " << indice << " valor: " << a[indice] << endl;
+            }
+        }
+    }
+```
+
 
 

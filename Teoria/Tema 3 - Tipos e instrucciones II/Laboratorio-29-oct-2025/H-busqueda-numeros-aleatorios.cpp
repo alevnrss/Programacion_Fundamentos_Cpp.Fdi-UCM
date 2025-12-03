@@ -69,8 +69,7 @@ void arrayDigitoMagico(tArrayNumerosAleatorios arrayDigitos, tArrayNumerosAleato
     }
 }
 
-void buscarDigitoMagico(const tArrayNumerosAleatorios arrayDigitosmagicos)
-{
+void buscarDigitoMagico(const tArrayNumerosAleatorios arrayDigitosmagicos){
     int indice = 0;
     bool encontrado = false;
     while ((indice < MAX) && !encontrado)
