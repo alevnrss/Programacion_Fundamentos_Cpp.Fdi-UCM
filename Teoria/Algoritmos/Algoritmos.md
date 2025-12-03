@@ -42,7 +42,7 @@ Para realizar este algoritmo se da uso de dos funciones:
 
 ***CODIGO C++ SOBRE EL DIGITO MAGICO***
 ```cpp
-    int esDigitoMagico(int n){
+    int esDigitoMagico(int n){  
         while(n > 9){
             n = sumaDigitos(n);
         }
