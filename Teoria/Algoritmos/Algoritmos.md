@@ -109,6 +109,76 @@ Si la condicion no se cumple entonces sumas el valor del ***INDICE***.
         }
     }
 ```
+## Algoritmo 3: BUSQUEDA DE SECUENCIA DE CARACTERES EN UN ARCHIVO.TXT
+Este algoritmo nos sirve para poder realizar la ***BUSQUEDA DE MAS DE UN CARACTER EN UN ARCHIVO DE TEXTO***.
+A diferencia de la funcion `find()` que es una funcion optima para encontrar una **Cadena de caracteres** en un archivo de texto, en este algoritmo se usara el algoritmo de `cambio de variable`.
+
+Este algoritmo tendra el siguiente esquema (*este esquema puede variar segun el enunciado*)
+
+***CODIGO C++ SOBRE EL ESQUEMA DE BUSQUEDA DE UNA SECUENCIA DE CARACTERES EN UN ARCHIVO.TXT***
+```cpp
+    ifstream archivo;
+    char c, anterior = ' ', actual;
+    int indice = 0;
+    bool encontrado = false;
+
+    archivo.open(nombreArchivo);
+
+    if (archivo.is_open())
+    {
+        c = archivo.get();
+        a[indice] = c;
+        actual = a[indice];
+
+        while ((indice < MAX_CHAR) && !encontrado)
+        {
+            if (anterior == '.' && actual == ' ')
+            {
+                encontrado = true;
+                cout << "Se ha leido : " << indice - 1 << " caracteres del fichero." << endl;
+                cout << "Se han encontrado los dos caracteres que se buscaban: punto y espacio." << endl;
+            }
+            else
+            {
+                anterior = actual;
+                indice++;
+                c = archivo.get();
+                a[indice] = c;
+                actual = a[indice];
+            }
+        }
+        if(!encontrado && indice == MAX_CHAR){
+            cout << "No se ha podido encontrar la secuencia";
+        }
+
+        recorrerCaracteresArray(a, indice);
+        archivo.close();
+    }
+    else
+    {
+        cout << "Error al abrir el archivo.txt";
+    }
+```
+*Nota importante*
+> Se puede imprescindir del trozo `c=archivo.get() | a[indice] = c | actual = a[indice]`. Para una mejor 
+> implementacion de espacio se puede usar directamente sin usar `c` -> `archivo.get(a[indice])` y despues
+> `actual = a[indice]`. Asi poder quitar una variable sobrante.
+
+**EXPLICACION DEL CODIGO**
+Este codigo usa: ***RECORRIDO DE UN ARRAY CON WHILE, ESQUEMA DE BUSQUEDA DE UN ARRAY(VARIANTE TXT), CAMBIO DE VARIABLE Y LECTURA DE UN ARCHIVO.TXT***.
+
+Explicacion de pasos a seguir:
+
+1. *Lectura de archivo.txt*
+    - Abrimos el archivo
+    - Leemos el primer caracter
+    - Importante inicializar antes la variable `anterior`, esta se inicializa antes debido a que no hay ningun valor anterior al actual.
+    - Una vez incializado entrar al bucle.
+2. *Esquema de busqueda de array*
+3. *Recorrido de array con while*
+4. *Condicion de cambio de variable*
+
+
 
 
 
