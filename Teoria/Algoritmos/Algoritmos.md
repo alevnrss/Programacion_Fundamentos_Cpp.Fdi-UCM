@@ -2,13 +2,12 @@
 
 # 🧭 Índice de Algoritmos
 
-- [***Algoritmo 1: Dígito Mágico***](#algoritmo-1-digito-magico)
-- [***Algoritmo 2: Búsqueda en Arrays***](#algoritmo-2-busqueda-en-arrays)
-- [***Algoritmo 3: Búsqueda de Secuencia en Archivo.txt***](#algoritmo-3-busqueda-de-secuencia-de-caracteres-en-un-archivo.txt)
-- [***Algoritmo 4: Libreria Iomanip - Matriz Bidimensional***](#algoritmo-4-iomanip---matriz-bidimensional---tabla-de-multiplicar)
+- [**_Algoritmo 1: Dígito Mágico_**](#algoritmo-1-digito-magico)
+- [**_Algoritmo 2: Búsqueda en Arrays_**](#algoritmo-2-busqueda-en-arrays)
+- [**_Algoritmo 3: Búsqueda de Secuencia en Archivo.txt_**](#algoritmo-3-busqueda-de-secuencia-de-caracteres-en-un-archivo.txt)
+- [**_Algoritmo 4: Libreria Iomanip - Matriz Bidimensional_**](#algoritmo-4-iomanip---matriz-bidimensional---tabla-de-multiplicar)
 
-
---- 
+---
 
 ## Algoritmo 1: DIGITO MAGICO
 
@@ -46,8 +45,8 @@ Para realizar este algoritmo se da uso de dos funciones:
 > El valor n que es el valor que le proporciona la anterior funcion tiene que ser igual a 0, ya que durante
 > su desarrollo se iran quitando valores de la cifra y si por ejemplo que da un 4 y se le quita ese 4 entonces queda 0.
 >
-> - La variable suma es quien sumara todos esas cifras cogiendo siempre la ultima -> `suma += n%10;`
-> - La variable n lo que hara es quitar su ultima cifra ya sumada -> `n /= 10`;
+> - La variable suma es quien sumara todos los utlimos digitos del numero n -> `suma += n%10;`
+> - La variable n lo que hara es quitar su ultima ultimo digito ya sumada -> `n /= 10`;
 > - Esto se repetira hasta que la variable n se quede sin nada para quitar, es decir, cuando n = 0;
 >
 > 2. Si `residuo o valor n` ya no es mayor a 0, entonces devuelves el digito magico. **Termina y devuelve**.
@@ -287,5 +286,116 @@ void tablaMultiplicar(const int N)
         cout << setw(N) << sumaFila;
         cout << endl;
     }
+}
+```
+
+## Algoritmo 5: NUMEROS DE ARMSTRONG (SIMILAR A DIGITO MAGICO).
+
+Este algoritmo es una estructura similar a la del digito magico, solamente que en este caso en vez de sumarlos deberan ser su cubos.
+Segun este algoritmo, los **_tres digitos_** de un numero de **_tres cifras_**, la `SUMA` de sus `CUBOS` deberan ser igual al numero de tres cifras.
+Para ello usaremos la funcion **_POW(n,3.0)_**.
+
+**_Según Armstrong_**, solo tenemos 4 numeros que son numeros de Armstrong dentro del intervalo de tres cifras.
+
+> Estos numeros serian el 153, 370, 371, 407
+
+### **_EXPLICACION DE PARTES DEL ALGORIMTO_**
+
+Este algoritmo tiene una serie de partes logicas que son las siguientes:
+
+1. _SOLO NUMERO DE TRES CIFRAS `for(int i = 100; i <= 999 ; i++)`_.
+   - Como sabemos, un numero de tres cifras son desde `100 a 999`, lo que esta fuera de ese intervalo o son de dos cifras o son de cuatro, cosa que no nos sirve para este algoritmo.
+2. _¿Es Armstrong? `int esArmstrong(int n)`_.
+   - Lo que hacemos en esta funcion es comprobar si ese numero de tres cifras es un numero de Armstrong, es decir, que cumpla la propiedad de que la suma de sus cubos sea igual al numero metido a la funcion. Si no es asi, entonces retorna 0. Debemos tener la condicion de que si retorna 0 que siga iterando hasta encontrar todos.
+3. _SUMA CUBOS `int sumaCubos(int n)`_.
+   - En esta funcion va a entrar siempre todos los numeros de 100 a 999, entonces ira haciendo la suma de los cubos de dichas cifras. **_`sumaCubos += (int)pow((n%10), 3.0))`_**.
+   - Despues quitamos ese digito, **_`n /= 10;`_**.
+   - Esto siempre se hara cuando el digito sea mayor a 0, si el digito es 0, es decir, que ya se le han quitado todas la cifras posibles, entonces ya se retorna la suma **_`return sumaCubos;`_**.
+   - Esto lo devuelve a la funcion **_`int esArmstrong()`_**, que lo que hara sera una vez devuelvas ese numero lo compara, y si ese numero es igual al numero de tres cifras, `LO DEVUELVE`. Sino es asi retorna `0`.
+4. _RELENAR ARRAY `hasta que ya encuentre cuatro numeros que son los unicos que hay`_.
+
+**\_CODIGO C++ SOBRE ALGORITMO SOBRE NUMEROS DE ARMSTRONG**
+
+```cpp
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+// Variables Globales
+const int MINIMO_TRES_CIFRAS = 100;
+const int MAXIMO_TRES_CIFRAS = 999;
+const int NUMEROS_ARMSTRONG = 4; // solo hay 4 numeros de armstrong
+
+// Estructuras
+typedef int tArrayArmstrong[NUMEROS_ARMSTRONG];
+
+// Prototipos
+void rellenartArrayArmstrong(tArrayArmstrong array, const int MINIMO, const int MAXIMO, const int NUMEROS_ARMSTRONG);
+int esNumeroArmstrong(int n);
+int calcularDigitoArmstrong(int n);
+
+int main()
+{
+
+    tArrayArmstrong arrayDeArmstrong;
+
+    rellenartArrayArmstrong(arrayDeArmstrong, MINIMO_TRES_CIFRAS, MAXIMO_TRES_CIFRAS, NUMEROS_ARMSTRONG);
+
+    cout << "Numeros de Armstrong encontrados:" << endl;
+    for (int i = 0; i < NUMEROS_ARMSTRONG; i++)
+    {
+        cout << arrayDeArmstrong[i] << endl;
+    }
+
+    return 0;
+}
+
+void rellenartArrayArmstrong(tArrayArmstrong array, const int MINIMO, const int MAXIMO, const int NUMEROS_ARMSTRONG)
+{
+    int indice = 0;
+
+    for (int i = MINIMO; i <= MAXIMO; i++)
+    {
+        int resultado = esNumeroArmstrong(i);
+        if ((resultado != 0) && (indice < NUMEROS_ARMSTRONG))
+        {
+            array[indice] = resultado;
+            indice++;
+        }
+        if (indice == NUMEROS_ARMSTRONG)
+        {
+            return;
+        }
+    }
+}
+
+int esNumeroArmstrong(int n)
+{
+    int sumaCubosCalculada = calcularDigitoArmstrong(n);
+    if (sumaCubosCalculada == n)
+    {
+        return n;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int calcularDigitoArmstrong(int n)
+{
+    int digito;
+    int sumaCubos = 0;
+    int temp = n; // no hace falta pero por si acaso no queremos modificar n.
+
+    while (temp > 0)
+    {
+        // obtener el ultimo digito
+        digito = temp % 10;
+        sumaCubos += (int)pow(digito, 3.0);
+        temp /= 10;
+    }
+    return sumaCubos;
 }
 ```
