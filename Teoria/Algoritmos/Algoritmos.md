@@ -178,7 +178,34 @@ Explicacion de pasos a seguir:
 3. *Recorrido de array con while*
 4. *Condicion de cambio de variable*
 
+## Algoritmo 4: IOMANIP - MATRIZ BIDIMENSIONAL - TABLA DE MULTIPLICAR
+Este algoritmo es importante en cuanto a la impresion de elementos en forma de tabla y organizacion.
+Se dara el uso de la libreria ***`<iomanip>`***, cuya libreria nos dejara dar uso a la funcion ***setw(N)***.
+### ***FUNCION SETW(N)***:
+Esta funcion se basa en hacer espacios entre los cout donde creara una especie de dimension segun el `tamaño N`. Es como hacer una habitacion de `X` espacio, donde si colocamos un **N = 5** este creara un espacio de hasta como mucho 5 caracteres. Es decir, que si guardamos el numero 1234 quedara de la siguiente manera:
+> _1234
 
+Y cada vez que vayamos metiendo mas caracteres se ira llenando cada vez mas dicha habitacion o anchura, por ejemplo vamos a dar dos numeros el *23* y el *12345*.
+>   _ _ _ 23
+>   12345 
 
+*Si ademas ponemos un numero que sobrepase dichar anchura no pasa nada, utilizara lo que necesita sin cortar el numero*.
 
+### ***MATRIZ BIDIMENSIONAL - TABLA DE MULTIPLICAR BASICA***
+En cuanto al algoritmo de la ***MATRIZ BIDIMENSIONAL***, usaremos la logica de los for anidados.
+Debemos pensar que una ***MATRIZ*** esta compuesta por `filas` y `columnas`, es decir, un ***(N x N)***.
+Si sabemos la anchura que queremos deberemos poner el valor de N como `constante`. Si no lo sabemos entonces lo pondremos como un valor N de tipo `entero`.
 
+Tenemos que saber las funcionalidades de los dos for:
+1. *FILAS `for(int i = 1; i <= N ; i++)`*.
+    - Controla las filas y el primer valor del operando.
+    - Al final de este siempre debe haber un `cout << endl;` para confirmar que se ha hecho bien la fila.
+    - Si queremos realizar al final una suma de todo los valores obtenidos `SUMATORIO`, entonces usaremos una variable auxiliar de suma inicializada a cero para ir sumando cada vez que se opere.
+2. *COLUMNAS `for(int j = 1; j <= N ; j++)`*.
+    - Controla las columnas y el segundo valor del operando. 
+    - Este es el que va a tener siempre las operaciones, pues el valor de `i` siempre es estatico.
+    - Realizara la operacion `(i X j)`.
+    - Para imprimir el producto siempre usaremos la sentencia: ***`cout << setw(N) << operacion;`***
+    - Finalmente ira incrementando el sumatorio con el valor de la operacion.
+3. *IMPRESION FINAL `Valor del sumatorio`*.
+    - Para imprimir el valor del sumatorio simplemente usamos un ***`cout << setw(N) << SUMATORIO;`***
