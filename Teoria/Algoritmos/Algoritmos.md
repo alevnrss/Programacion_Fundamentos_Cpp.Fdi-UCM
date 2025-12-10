@@ -1,6 +1,17 @@
 # EXPLICACION DE ALGORITMOS IMPORTANTES
 
----
+# 🧭 Índice de Algoritmos
+
+- [Algoritmo 1: Dígito Mágico](#algoritmo-1-digito-magico)
+  - [Función esDigitoMagico](#funcion-esdigitomagico-controlador)
+  - [Función sumaDigitos](#funcion-sumadigitos-operador)
+- [Algoritmo 2: Búsqueda en Arrays](#algoritmo-2-busqueda-en-arrays)
+  - [Esquema de Búsqueda](#esquema-de-busqueda-de-elementos-en-un-array)
+- [Algoritmo 3: Búsqueda de Secuencia en Archivo.txt](#algoritmo-3-busqueda-de-secuencia-de-caracteres-en-un-archivo.txt)
+- [Algoritmo 4: IOMANIP - Matriz Bidimensional](#algoritmo-4-iomanip---matriz-bidimensional---tabla-de-multiplicar)
+  - [Función setw(N)](<#_funcion-setw(n)_>)
+
+--- 
 
 ## Algoritmo 1: DIGITO MAGICO
 
