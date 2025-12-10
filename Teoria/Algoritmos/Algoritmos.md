@@ -314,7 +314,7 @@ Este algoritmo tiene una serie de partes logicas que son las siguientes:
    - Esto lo devuelve a la funcion **_`int esArmstrong()`_**, que lo que hara sera una vez devuelvas ese numero lo compara, y si ese numero es igual al numero de tres cifras, `LO DEVUELVE`. Sino es asi retorna `0`.
 4. _RELENAR ARRAY `hasta que ya encuentre cuatro numeros que son los unicos que hay`_.
 
-**\_CODIGO C++ SOBRE ALGORITMO SOBRE NUMEROS DE ARMSTRONG**
+**_CODIGO C++ SOBRE ALGORITMO SOBRE NUMEROS DE ARMSTRONG_**
 
 ```cpp
 #include <iostream>
