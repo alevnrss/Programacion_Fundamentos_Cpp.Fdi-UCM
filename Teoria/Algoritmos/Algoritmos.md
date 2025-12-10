@@ -5,7 +5,7 @@
 - [***Algoritmo 1: Dígito Mágico***](#algoritmo-1-digito-magico)
 - [***Algoritmo 2: Búsqueda en Arrays***](#algoritmo-2-busqueda-en-arrays)
 - [***Algoritmo 3: Búsqueda de Secuencia en Archivo.txt***](#algoritmo-3-busqueda-de-secuencia-de-caracteres-en-un-archivo.txt)
-- [***Algoritmo 4: IOMANIP - Matriz Bidimensional***](#algoritmo-4-iomanip---matriz-bidimensional---tabla-de-multiplicar)
+- [***Algoritmo 4: Libreria Iomanip - Matriz Bidimensional***](#algoritmo-4-iomanip---matriz-bidimensional---tabla-de-multiplicar)
 
 
 --- 
