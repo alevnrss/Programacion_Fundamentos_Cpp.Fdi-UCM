@@ -399,3 +399,62 @@ int calcularDigitoArmstrong(int n)
     return sumaCubos;
 }
 ```
+
+## Algoritmo 6: BUSQUEDA DEL MENOR O MAYOR VALOR DE ENTRE TODOS LOS VALORES UBICADOS DENTRO DE UN ARRAY.
+
+Este algoritmo trata sobre la busqueda del minimo o maximo valor que hay en un array. Esto se puede resolver con dos tipos de bucles distintos: `WHILE()` o `FOR()`
+
+Empezaremos mostrando su resolucion a traves de un simple bucle **_for()_**.
+
+### **_EXPLICACION DE LA RESOLUCION DEL ALGORITMO_**
+
+Este algoritmo tiene una serie de partes logicas que son las siguientes:
+
+1. _¿QUE ES LO QUE QUEREMOS ENCONTRAR? (CREACION DE VARIABLE COMPARADOR)_.
+    -   Tenemos que crear una variable que sirva para comprobar el valor por cada iteracion que hagamos en el array. A esta variable la llamaremos **_variable comparadora_**.
+
+    - Si lo que buscamos es el ***MENOR DE TODOS LOS VALORES*** entonces deberemos crear una variable entera que tenga el valor del valor maximo que se pueda tener en el array.
+
+    > Por ejemplo un array de notas, como maximo puede haber una nota que llegue a 10, esa nota la guardamos en nuestra variable comparadora que servira para 
+    > comprobar si realmente existe un valor menor que el 10, si hay entonces hacemos un cambio de valor donde ahora nuestra comparadora sera esa nota que fue
+    > menor a la anterior comparadora.
+
+    - Si por el contrario, lo que buscamos es el ***MAYOR DE TODOS LOS VALORES*** entonces deberemos crear una variable entera que tenga el valor del valor minimo que se pueda tener en el array.
+
+2. _ITERARCION CON INTERCAMBIO DE VALORES_.
+   - Una vez tengamos la variable comparadora creada, lo que nos tocara sera recorrer valor por valor del array **comparando** con nuestro valor ***maximo o minimo*** (*dependiendo de lo que queremos buscar*) y donde ***solamente finalizara cuando se haya terminado de iterrar todo el array***.
+   - Es importante siempre ***intercambiar*** los valores de nuestra variable comparadora porque sino nunca llegara a encontrar el minimo de todos los valores.
+
+   - Tambien pueden pedir que busquemos si se llega a encontar una de las primeras posiciones con el valor minimo y que si se ha encontrado ese valor minimo que no se itere mas, en este caso el valor minimo seria como nuestro valor centinela pero que lo trataremos con un valor booleano encontrado. Para que despues de verificar que es el menor, si coincide con que es el menor de todos y sabemos que no hay otro mas pequeño que este entonces que salga del bucle.
+
+   - Otro caso seria realizar un contador que tambien se podria realizar de la misma manera, pero esta vez sin tratarlo con un valor booleano para salir, sino que cada vez que encuentre un valor que alcance el minimo, que lo cuente.     
+
+**_CODIGO C++ SOBRE ALGORITMO SOBRE BUSQUEDA DEL MENOR O MAYOR VALOR DE ENTRE TODOS LOS VALORES UBICADOS DENTRO DE UN ARRAY_**
+
+```cpp
+const int MAX = 10;
+typedef int tArrayNotasAlumnos = [10];
+
+// Maximo puede haber un 10 como nota.
+int valorMinimo = 10;
+
+// Minimo puede haber un 0 como nota.
+int valorMaximo = 0;
+
+tArrayNotasAlumnos = notas;
+for(int i = 0; i < MAX ; i++){
+    // Comprobar cual es la menor notas de todas las que hay en el array
+    if(notas[i] < valorMinimo){
+        valorMinimo = notas[i]
+    }
+    if(notas[i] > valorMaximo){
+        valorMaximo = notas[i]
+    }
+}
+
+cout << "Minimo de todos los valores del array: " << valorMinimo << " Maximo de todos los valores del array: " << valorMaximo;
+```
+
+
+
+
