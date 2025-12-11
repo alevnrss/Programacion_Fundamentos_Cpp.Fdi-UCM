@@ -1,1 +1,0 @@
-ool buscarNumero(tArrayNumeros numeros, int numABuscar){
