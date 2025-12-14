@@ -7,6 +7,8 @@
  * 
  *  - Su funcion es agrupar uno o varios miembros bajo un mismo nombre.
  * 
+ *  - Cada campo esta definido por un nombre en especifico.
+ * 
  */
 
 #include <iostream>
@@ -16,7 +18,7 @@ using namespace std;
 // Definimos un struct de tipo persona -> sus propiedades son nombre, apellidos, edad y nif.
 // importante definir al final el nombre del struct.    
 typedef struct {
-    string nombre;
+    string nombre;  // campo nombre
     string apellidos;
     int edad;
     string nif;
@@ -47,13 +49,13 @@ int main(){
     persona2 = persona3 = persona;
 
     // Si imprimimos, podemos ver que tanto persona2 como persona3 son iguales a persona1 pues los hemos copiado despues de haber dado valores a persona1
-    cout << "\nInformacion de la persona 2: " << endl
+    cout << "\nInformacion de la persona 2 copiada de la persona 1: " << endl
     << "Nombre: " << persona2.nombre << endl
     << "Apellidos: " << persona2.apellidos << endl
     << "Edad: " << persona2.edad << endl
     << "NIF: " << persona2.nif << endl;
 
-    cout << "\nInformacion de la persona 3: " << endl
+    cout << "\nInformacion de la persona 3 copiada de la persona 1: " << endl
     << "Nombre: " << persona3.nombre << endl
     << "Apellidos: " << persona3.apellidos << endl
     << "Edad: " << persona3.edad << endl

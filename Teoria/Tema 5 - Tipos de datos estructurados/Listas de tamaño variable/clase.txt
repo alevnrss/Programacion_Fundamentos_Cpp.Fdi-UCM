@@ -1,0 +1,41 @@
+Jose Luis
+Garcia Perez
+19
+19123456789Q
+7.6
+Ana
+Gonzalez Rios
+19
+20123456789Q
+4.3
+Manuel Alejandro
+Besteiro Rodriguez
+19
+21123456789Q
+2
+Rosa Maria
+Gil Andres
+19
+19123456789Q
+3
+Sara
+Galisteo Moron
+19
+21123456789Q
+4
+Alejandro 
+Ballesteros Dominguez
+23
+54365432T
+5
+Jose
+Garcia Negro
+23
+654365432F
+1
+Jose Antonio
+Carrasco Ballesteros
+23
+546543654354H
+0
+xxx

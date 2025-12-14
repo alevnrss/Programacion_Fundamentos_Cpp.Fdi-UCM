@@ -5,7 +5,7 @@
  * En este ejercicio se mostrara como se puede crear un array de estructuras de tipo persona, donde llenaremos todas las personas con su informacion y donde podremos tener 
  * mas de una persona con sus propiedades.
  * 
- * En este caso, segun cuantas personas queramos sera nuestro tamaño del array de tipo persona.
+ * En este caso, segun cuantas personas queramos asociar al array, sera nuestro tamaño del array de tipo persona.
  * 
  * Declaramos un tipo de dato creado por el usuario de tipo array de tipo persona con un tamanio de 2 personas.
  * 
@@ -17,6 +17,8 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
+
+const int DIM = 2;
 
 typedef struct {
     string dni;
@@ -30,7 +32,7 @@ typedef struct {
     tNif nif;
 }tPersona;
 
-const int DIM = 2;
+
 typedef tPersona tArray[DIM];
 
 void rellenarArrayPersona(tArray persona);
