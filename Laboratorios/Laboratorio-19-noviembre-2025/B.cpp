@@ -48,5 +48,3 @@ void MostrarArrayUsuarios(const tArray &array){
         cout << "Sueldo anual: " << array[i].sueldo << endl;
     }
 }
-
-
