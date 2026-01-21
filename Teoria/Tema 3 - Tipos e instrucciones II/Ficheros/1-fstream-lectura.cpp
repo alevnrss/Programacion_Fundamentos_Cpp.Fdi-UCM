@@ -10,7 +10,7 @@
  * 
  * ABRIR FICHERO :
  * Asociamos el nombre del fichero (nombre.txt) a un objeto creado por nosotros
- * Este objeto se debe definir segun para que uso le queremos dar, leer o escribir.
+ * Este objeto se debe definir segun para que uso le queremos dar. Leer o escribir.
  * 
  * CERRAR FICHERO :
  * Es importante cerrar el fichero para evitar posibles errores.
